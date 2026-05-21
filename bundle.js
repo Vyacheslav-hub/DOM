@@ -1,1 +1,1 @@
-(()=>{"use strict";console.log(2)})();
+(()=>{"use strict";console.log(2);const e=document.querySelector("#game-board"),t=document.createElement("div");t.classList.add("b"),e.append(t)})();
