@@ -1,12 +1,9 @@
-import "./css/index.css";
+import "./goblins-game/style.css";
+import GoblinsGame from "./goblins-game/GoblinsGame.js";
 
-const a = 2;
-console.log(a)
+document.addEventListener('DOMContentLoaded', () => {
+    const game = new GoblinsGame();
 
+    game.init();
 
-const gg = document.querySelector('#game-board');
-
-const bb = document.createElement('div');
-bb.classList.add('b')
-
-gg.append(bb);
+});
