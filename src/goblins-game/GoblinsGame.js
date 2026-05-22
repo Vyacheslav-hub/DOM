@@ -1,4 +1,4 @@
-import goblin from './Img/goblin.png'
+import goblin from './img/goblin.png'
 export default class GoblinsGame {
     constructor() {
         this.container = document.querySelector('#game_container');
