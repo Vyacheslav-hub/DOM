@@ -7,7 +7,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default (_env, argv) => ({
-  entry: "./src/app.js",
+  entry: {
+    goblin: "./src/goblins-game/app.js",
+    table: './src/table/app.js'
+  },
   devServer: {
     static: "./dist",
     open: true,
@@ -15,7 +18,14 @@ export default (_env, argv) => ({
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
+      template: './src/index.html',
+      filename: 'index.html',
+      chunks: ['goblin']
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/table.html',
+      filename: 'table.html',
+      chunks: ['table']
     }),
     new MiniCssExtractPlugin({
       filename: "style.css",
@@ -23,7 +33,7 @@ export default (_env, argv) => ({
   ],
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
+    filename: "[name].js",
     clean: true,
     publicPath: argv.mode === "production" ? "/DOM/" : "/",
   },
