@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    padding: 40px;
+}
+.game_container {
+    margin: 10% 35%;
+    width: 500px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.game_cell {
+    aspect-ratio: 1 / 1;
+    border: 3px solid black;
+    box-sizing: border-box;
+}
