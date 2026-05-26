@@ -1,9 +1,7 @@
 import "../goblins-game/style.css";
-import GoblinsGame from "../goblins-game/GoblinsGame.js";
+import "./style.css"
+import initTable from "./table.js";
 
 document.addEventListener('DOMContentLoaded', () => {
-    const game = new GoblinsGame();
-
-    game.init();
-
+    initTable();
 });
