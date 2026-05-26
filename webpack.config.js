@@ -28,7 +28,7 @@ export default (_env, argv) => ({
       chunks: ['table']
     }),
     new MiniCssExtractPlugin({
-      filename: "style.css",
+      filename: "[name].css",
     }),
   ],
   output: {
