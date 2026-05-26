@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    padding: 40px;
+}
+.game_container {
+    margin: 5% 35%;
+    width: 500px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.game_cell {
+    aspect-ratio: 1 / 1;
+    border: 3px solid black;
+    box-sizing: border-box;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    background: linear-gradient(135deg, #000000, #333333);
+    border: 2px solid #ff3b3b;
+    border-radius: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #111, #444);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+
+}
+
+.button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+table {
+    border-collapse: collapse;
+    width: 600px;
+    margin: 40px auto;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 8px;
+}
+
