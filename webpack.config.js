@@ -9,7 +9,8 @@ const __dirname = path.dirname(__filename);
 export default (_env, argv) => ({
   entry: {
     goblin: "./src/goblins-game/app.js",
-    table: './src/table/app.js'
+    table: './src/table/app.js',
+    tableClassic: "./src/tableClassic/app.js",
   },
   devServer: {
     static: "./dist",
@@ -26,6 +27,11 @@ export default (_env, argv) => ({
       template: './src/table.html',
       filename: 'table.html',
       chunks: ['table']
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/tableClassic.html',
+      filename: 'tableClassic.html',
+      chunks: ['tableClassic']
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
