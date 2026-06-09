@@ -6,6 +6,14 @@ export default class GoblinsGame {
         this.goblin = null;
         this.currentIndex = null;
         this.interval = null;
+
+        this.catchCounter = document.querySelector('.counterCatchSpan');
+        this.missedCounter = document.querySelector('.counterMissedSpan');
+
+        this.catch = 0;
+        this.missed = 0;
+
+        this.isHit = false;
     }
 
     init() {
@@ -36,6 +44,8 @@ export default class GoblinsGame {
         this.goblin.alt = 'картинка гоблина';
         this.goblin.src = goblin;
 
+        this.eventListenerGoblin();
+
         const randomIndex = Math.floor(Math.random() * this.cells.length);
 
         this.currentIndex = randomIndex;
@@ -44,11 +54,32 @@ export default class GoblinsGame {
     }
 
     moveGoblin() {
+        if (!this.isHit) {
+            this.missed ++;
+            this.missedCounter.textContent = this.missed;
+        }
+
+        if (this.missed >= 5) {
+            clearInterval(this.interval);
+            alert('Game over');
+            return;
+        }
+
         let newIndex = Math.floor(Math.random() * this.cells.length);
         while (newIndex === this.currentIndex) {
             newIndex = Math.floor(Math.random() * this.cells.length);
         }
         this.cells[newIndex].append(this.goblin);
         this.currentIndex = newIndex;
+        this.isHit = false;
+    }
+
+    eventListenerGoblin () {
+        this.goblin.addEventListener('click', () => {
+            this.catch ++;
+            this.catchCounter.textContent = this.catch;
+            this.isHit = true;
+            this.goblin.remove();
+        })
     }
 }
