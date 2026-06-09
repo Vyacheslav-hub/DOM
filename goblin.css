@@ -7,10 +7,13 @@ body {
     width: 500px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 1fr;
+    cursor: url(/DOM/f7440ad74f3a68510f01.png) 16 16, auto;
 }
 
 .game_cell {
     aspect-ratio: 1 / 1;
+    width: 100%;
     border: 3px solid black;
     box-sizing: border-box;
 }
@@ -40,5 +43,20 @@ body {
 .button:active {
     transform: translateY(0);
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.containerCounter {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 35%;
+    font-size: 20px;
+    width: 500px;
+}
+
+.game_img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
