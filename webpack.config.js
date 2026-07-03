@@ -11,6 +11,7 @@ export default (_env, argv) => ({
     goblin: "./src/goblins-game/app.js",
     table: './src/table/app.js',
     tableClassic: "./src/tableClassic/app.js",
+    topTasks: "./src/topTasks/app.js"
   },
   devServer: {
     static: "./dist",
@@ -32,6 +33,11 @@ export default (_env, argv) => ({
       template: './src/tableClassic.html',
       filename: 'tableClassic.html',
       chunks: ['tableClassic']
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/topTasks.html',
+      filename: 'topTasks.html',
+      chunks: ['topTasks']
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
