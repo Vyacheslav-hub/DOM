@@ -1,0 +1,172 @@
+body {
+    margin: 0;
+    padding: 40px;
+}
+.game_container {
+    margin: 5% 35%;
+    width: 500px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 1fr;
+    cursor: url(/DOM/f7440ad74f3a68510f01.png) 16 16, auto;
+}
+
+.game_cell {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    border: 3px solid black;
+    box-sizing: border-box;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    background: linear-gradient(135deg, #000000, #333333);
+    border: 2px solid #ff3b3b;
+    border-radius: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #111, #444);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+
+}
+
+.button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.containerCounter {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 35%;
+    font-size: 20px;
+    width: 500px;
+}
+
+.game_img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.container {
+    max-width: 400px;
+    padding: 20px;
+    border: 3px solid black;
+    margin: 0 auto 20px;
+}
+.topTask__title {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+#topTask {
+    margin-bottom: 20px;
+}
+
+#task {
+    width: 100%;
+    height: 20px;
+}
+
+.allTasks__text, .pinned__text{
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.task {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.task__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+
+
+/* Скрываем стандартный чекбокс */
+.task__checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Создаем свой круглый чекбокс */
+.checkmark {
+    position: relative;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: #eee;
+    border-radius: 50%; /* Делает блок круглой формы */
+    vertical-align: middle;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+/* Цвет фона при наведении */
+.task__checkbox:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* Внутренняя галочка (скрыта по умолчанию) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Показываем галочку, когда чекбокс выбран */
+.task__checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Стили галочки */
+.task__checkbox .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+/* Меняем цвет круга при выборе */
+.task__checkbox input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+
+.tasks__pinned {
+    margin-bottom: 20px;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    min-height: 18px;
+}
+
