@@ -14,3 +14,4 @@
 | `npm run build` | Production-сборка в `dist/` |
 | `npm run lint` | ESLint |
 | `npm run test` | Jest (`--passWithNoTests`, если тестов нет) |
+
