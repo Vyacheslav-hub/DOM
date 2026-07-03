@@ -1,0 +1,109 @@
+.container {
+    max-width: 400px;
+    padding: 20px;
+    border: 3px solid black;
+    margin: 0 auto 20px;
+}
+.topTask__title {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+#topTask {
+    margin-bottom: 20px;
+}
+
+#task {
+    width: 100%;
+    height: 20px;
+}
+
+.allTasks__text, .pinned__text{
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.task {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.task__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+
+
+/* Скрываем стандартный чекбокс */
+.task__checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Создаем свой круглый чекбокс */
+.checkmark {
+    position: relative;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: #eee;
+    border-radius: 50%; /* Делает блок круглой формы */
+    vertical-align: middle;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+/* Цвет фона при наведении */
+.task__checkbox:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* Внутренняя галочка (скрыта по умолчанию) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Показываем галочку, когда чекбокс выбран */
+.task__checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Стили галочки */
+.task__checkbox .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+/* Меняем цвет круга при выборе */
+.task__checkbox input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+
+.tasks__pinned {
+    margin-bottom: 20px;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    min-height: 18px;
+}
